@@ -5,7 +5,7 @@ class Board
   attr_accessor :grid
 
   def initialize
-    @grid = make_grid
+    @grid = make_starting_grid
   end
 
   def [](pos)
