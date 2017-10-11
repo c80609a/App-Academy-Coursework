@@ -4,7 +4,8 @@ require 'singleton'
 class Piece
   attr_accessor :pos
 
-  def initialize(pos = nil, symbol = :nil)
+  def initialize(board, pos = nil, symbol = :" " )
+    @board = board
     @pos = pos
     @symbol = symbol
   end
@@ -21,7 +22,7 @@ class Piece
     @symbol
   end
 
-  def valid_moves()
+  def moves()
 
   end
 
@@ -34,8 +35,8 @@ end
 class King < Piece
   include Stepable
 
-  def initialize(pos)
-    super(pos, :K)
+  def initialize(board, pos)
+    super(board, pos, :K)
   end
 
 end
@@ -43,48 +44,49 @@ end
 class Knight < Piece
 
   include Stepable
-  def initialize(pos)
-    super(pos, :N)
+  def initialize(board, pos)
+    super(board, pos, :N)
   end
 
 end
 
 class Pawn < Piece
 
-  def initialize(pos)
-    super(pos, :P)
+  def initialize(board, pos)
+    super(board, pos, :P)
   end
 
 end
 
 class Bishop < Piece
   include Slideable
-  def initialize(pos)
-    super(pos, :B)
+  def initialize(board, pos)
+    super(board, pos, :B)
   end
 
 end
 
 class Rook < Piece
   include Slideable
-  def initialize(pos)
-    super(pos, :R)
+  def initialize(board, pos)
+    super(board, pos, :R)
   end
 
 end
 
 class Queen < Piece
   include Slideable
-  def initialize(pos)
-    super(pos, :Q)
+  def initialize(board, pos)
+    super(board, pos, :Q)
   end
 
 end
-#
+
 class NullPiece < Piece
   include Singleton
 
-  def initialize
-    super
+  def initialize(board)
+    super(board)
   end
+
 end

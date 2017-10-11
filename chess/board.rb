@@ -19,6 +19,12 @@ class Board
     grid[x][y] = piece
   end
 
+  def in_bounds(pos)
+    x, y = pos
+    return false unless (0..7).include?(x) && (0..7).include?(y)
+    true
+  end
+
   def move_piece(from_pos, to_pos)
     # will eventually need to check color of piece
     # grid at from_pos becomes null, to_pos becomes piece
