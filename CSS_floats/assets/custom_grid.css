@@ -1,0 +1,14 @@
+/* PUT FLUID GRID CODE HERE */
+aside {
+  width: 25%;
+  float: left;
+}
+
+.main_content {
+  float: left;
+  width: 70%;
+}
+
+figure img {
+  width: 100%;
+}
