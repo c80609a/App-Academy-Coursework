@@ -10,10 +10,10 @@ Cat.destroy_all
 
 CatRentalRequest.destroy_all
 
-cat1 = Cat.create(birthdate: Date.new(2013,3,23), color: 'brown', sex: 'F', name: 'Florence', description: "Badass cat")
-cat2 = Cat.create(birthdate: Date.new(1508,4,12), color: 'black', sex: 'M', name: "Mike", description: "Very old cat")
-cat3 = Cat.create(birthdate: Date.new(1700,6,30), color: 'gray', sex: 'F', name: "Michelle", description: "Cool cat")
-cat4 = Cat.create(birthdate: Date.new(1889,11,9), color: 'black', sex: 'M', name: "BatMan", description: "Crayyyzy cat")
+cat1 = Cat.create(birthdate: Date.new(2013,3,23), color: 'brown', sex: 'F', name: Faker::Pokemon.name, description: Faker::RickAndMorty.quote)
+cat2 = Cat.create(birthdate: Date.new(1508,4,12), color: 'black', sex: 'M', name: Faker::Pokemon.name, description: Faker::RickAndMorty.quote)
+cat3 = Cat.create(birthdate: Date.new(1700,6,30), color: 'gray', sex: 'F', name: Faker::Pokemon.name, description: Faker::RickAndMorty.quote)
+cat4 = Cat.create(birthdate: Date.new(1889,11,9), color: 'black', sex: 'M', name: Faker::Pokemon.name, description: Faker::RickAndMorty.quote)
 
 
 rental1 = CatRentalRequest.create(cat_id: cat1.id, status: 'APPROVED', start_date: Date.new(2015,1,1), end_date: Date.new(2015,1,3))

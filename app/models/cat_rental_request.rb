@@ -28,4 +28,29 @@ class CatRentalRequest < ApplicationRecord
       errors[:base] << 'Conflict with approved request'
     end
   end
+
+  def overlapping_pending_requests
+      overlapping_requests.where(status: 'PENDING')
+  end
+
+  def does_not_overlap_pending_request
+    unless overlapping_pending_requests.empty?
+      errors[:base] << 'Conflicts with pending requests'
+    end
+  end
+
+  def approve!
+    pending_requests = CatRentalRequest.where(status: 'PENDING')
+    pending_requests.each do |request|
+      if request.does_not_overlap_approved_request && request.does_not_overlap_pending_request
+        #change status to APPROVED
+        request.update(status: 'APPROVED')
+      else
+        #change status to DENIED
+        request.update(status: 'DENIED')
+      end
+    end
+
+  end
+  
 end
