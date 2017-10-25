@@ -41,16 +41,23 @@ class CatRentalRequest < ApplicationRecord
 
   def approve!
     pending_requests = CatRentalRequest.where(status: 'PENDING')
-    pending_requests.each do |request|
-      if request.does_not_overlap_approved_request && request.does_not_overlap_pending_request
-        #change status to APPROVED
-        request.update(status: 'APPROVED')
-      else
-        #change status to DENIED
-        request.update(status: 'DENIED')
+
+    transaction do
+      pending_requests.each do |request|
+        if request.does_not_overlap_approved_request
+          #change status to APPROVED
+          request.update(status: 'APPROVED')
+
+        else
+          #change status to DENIED
+          request.update(status: 'DENIED')
+        end
       end
     end
 
+
   end
-  
+
+
+
 end
