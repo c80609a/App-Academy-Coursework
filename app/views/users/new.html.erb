@@ -1,0 +1,14 @@
+<h2>New User Sign Up</h2>
+
+<%= render 'layouts/errors' %>
+
+<form class="" action="<%= users_url %>" method="post">
+  <%= auth_token %>
+<label for="user_email">Email:</label>
+<input type="text" id="user_email" name="user[email]" value="">
+<br>
+<label for="user_pasword">Password:</label>
+<input type="text" name="user[password]" value="">
+<br>
+<input type="submit" name="" value="Create!">
+</form>

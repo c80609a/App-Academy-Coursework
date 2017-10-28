@@ -1,0 +1,9 @@
+<h3>Band Info Page!</h3>
+
+<h2>Band Name: <%= @band.name %></h2>
+<br>
+<%= button_to "Edit Band", edit_band_url(@band), method: :get %>
+<%= button_to "Delete Band", band_url, method: :delete %>
+<br>
+<br>
+<%= button_to "Back to Index", bands_url %>
