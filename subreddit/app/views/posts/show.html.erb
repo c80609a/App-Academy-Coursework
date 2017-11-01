@@ -1,0 +1,12 @@
+<h6>Post Page</h6>
+<h3><%= @post.title %></h3>
+<h4><%= @post.url %></h4>
+<br>
+<p> <%= @post.content %></p>
+<br>
+
+
+<%= button_to "Edit Post", edit_post_url, method: :get %>
+<%= button_to "Delete!", post_url, method: :delete %>
+
+<%= button_to "Take me Home", subs_url, method: :get %>
