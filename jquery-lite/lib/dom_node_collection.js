@@ -59,6 +59,42 @@ class DOMNodeCollection {
       }
     });
   }
+
+  children() {
+    // let childNode = new DOMNodeCollection(this.children);
+    // return childNode.htmlEls;
+
+    const arr = this.htmlEls.map((el) => {
+       return el.children;
+    });
+    return new DOMNodeCollection(arr);
+
+  }
+
+  parent() {
+    const arr = [];
+    this.htmlEls.forEach((el) => {
+      if (!arr.includes(el.parentNode)) {
+        arr.push(el.parentNode);
+      }
+    });
+    return new DOMNodeCollection(arr);
+  }
+
+  find(item) {
+    const arr = [];
+    this.htmlEls.forEach((el) => {
+      arr.push(el.querySelectorAll(item));
+    });
+    return new DOMNodeCollection(arr);
+  }
+
+  remove() {
+    this.empty();
+    this.htmlEls.map((el) => {
+      el.remove();
+    });
+  }
 }
 
 module.exports = DOMNodeCollection;
