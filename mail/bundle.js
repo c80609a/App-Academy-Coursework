@@ -68,6 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 const Router = __webpack_require__(1);
+const Inbox = __webpack_require__(2);
 
 document.addEventListener('DOMContentLoaded', () => {
   const navBarLis = document.querySelectorAll('.sidebar-nav li');
@@ -80,11 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.hash = newLoc;
 
       const content = document.querySelector('.content');
-      const rtr = new Router(content);
+      const rtr = new Router(content, routes);
       rtr.start();
     });
   });
 });
+
+const routes = {
+  // compose:
+  inbox: Inbox
+  // sent:
+};
 
 
 /***/ }),
@@ -92,8 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
 /***/ (function(module, exports) {
 
 class Router {
-  constructor (node) {
+  constructor (node, routes) {
     this.node = node;
+    this.routes = routes;
   }
 
   start () {
@@ -107,20 +115,42 @@ class Router {
 
   render () {
     debugger;
-    this.node.innerHTML = "";
-    let routeName = this.activeRoute();
-    const newP = document.createElement('p');
-    newP.innerHTML = routeName;
-    this.node.appendChild(newP);
+    let component = this.activeRoute();
+    if (component === undefined) {
+      this.node.innerHTML = "";
+    } else {
+      this.node.innerHTML = "";
+      this.node.appendChild(component.render());
+      // const newP = document.createElement('p');
+      // newP.innerHTML = routeName;
+      // this.node.appendChild(newP);
+    }
+
   }
 
   activeRoute() {
-    const hashFrag = window.location.hash;
-    return hashFrag.slice(1);
+    const hashFrag = window.location.hash.slice(1);
+    return this.routes[hashFrag];
   }
 }
 
 module.exports = Router;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+const Inbox = {
+  render: function () {
+    const newUl = document.createElement('ul');
+    newUl.className = "messages";
+    newUl.innerHTML = "An Inbox Message";
+    return newUl;
+  }
+};
+
+module.exports = Inbox;
 
 
 /***/ })
