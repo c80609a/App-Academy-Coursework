@@ -14,7 +14,6 @@ class Router {
   }
 
   render () {
-    debugger;
     let component = this.activeRoute();
     if (component === undefined) {
       this.node.innerHTML = "";

@@ -114,7 +114,6 @@ class Router {
   }
 
   render () {
-    debugger;
     let component = this.activeRoute();
     if (component === undefined) {
       this.node.innerHTML = "";
@@ -139,18 +138,68 @@ module.exports = Router;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+const MessageStore = __webpack_require__(3);
 
 const Inbox = {
   render: function () {
     const newUl = document.createElement('ul');
     newUl.className = "messages";
-    newUl.innerHTML = "An Inbox Message";
+    const inboxMessages = MessageStore.getInboxMessages();
+    inboxMessages.forEach((el) => {
+      const renderedMessage = this.renderMessage(el);
+      newUl.appendChild(renderedMessage);
+    });
+
     return newUl;
+  },
+
+  renderMessage: (message) => {
+    const newLi = document.createElement('li');
+    newLi.className = "message";
+
+    const fromSpan = document.createElement("span");
+    fromSpan.className = "from";
+    fromSpan.innerHTML = `${message.from}`;
+    const subjectSpan = document.createElement("span");
+    subjectSpan.className = "subject";
+    subjectSpan.innerHTML = `${message.subject}`;
+    const bodySpan = document.createElement("span");
+    bodySpan.className = "body";
+    bodySpan.innerHTML = `${message.body}`;
+    return newLi;
   }
 };
 
 module.exports = Inbox;
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+let messages = {
+  sent: [
+    {to: "friend@mail.com", subject: "Check this out", body: "It's so cool"},
+    {to: "person@mail.com", subject: "zzz", body: "so booring"}
+  ],
+  inbox: [
+    {from: "grandma@mail.com", subject: "Fwd: Fwd: Fwd: Check this out", body: "Stay at home mom discovers cure for leg cramps. Doctors hate her"},
+    {from: "person@mail.com", subject: "Questionnaire", body: "Take this free quiz win $1000 dollars"}
+  ]
+};
+
+const MessageStore = {
+  getInboxMessages: () => {
+    return messages.inbox;
+  },
+  getSentMessages: () => {
+    return messages.sent;
+  }
+};
+
+module.exports = MessageStore;
 
 
 /***/ })
