@@ -183,6 +183,19 @@ class DOMNodeCollection {
       el.remove();
     });
   }
+
+  on(eventType, callback) {
+    this.htmlEls.map((el) => {
+      el.callback = callback;
+      el.addEventListener(eventType, callback(event));
+    });
+  }
+
+  off(eventType) {
+    this.htmlEls.map((el) => {
+      el.removeEventListener(eventType, el.callback);
+    });
+  }
 }
 
 module.exports = DOMNodeCollection;
