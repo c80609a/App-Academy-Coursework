@@ -1,0 +1,27 @@
+p {
+  display: flex;
+  font-family: Nosifer, sans-serif;
+  color: crimson;
+  font-size: 200%;
+  justify-content: space-between;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 5px 5px 5px black;
+  font-family: Nosifer, sans-serif;
+  color: crimson;
+}
+
+span {
+  margin: 20px;
+}
+
+.clock-container {
+  margin: auto;
+  width: 80%;
+  border: 6px solid #ff9900;
+  background-color: black;
+
+}
