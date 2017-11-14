@@ -17,14 +17,18 @@ const initialState = {
 };
 
 const todosReducer = (state = initialState, action) => {
+  //before the switch, be safe and freeze your object
+  Object.freeze(state);
+  let nextState;
+
   switch(action.type) {
     case RECEIVE_TODOS:
-      const newState = {};
+      nextState = {};
       action.todos.forEach ((obj) => {
-        newState[obj.id] = obj;
+        nextState[obj.id] = obj;
       });
 
-      return newState;
+      return nextState;
 
     case RECEIVE_TODO:
       const newTodo = {};
@@ -33,13 +37,9 @@ const todosReducer = (state = initialState, action) => {
       return merge({}, state, newTodo);
 
     case REMOVE_TODO:
-      Object.freeze(state);
-      const newState1 = merge({}, state);
-      const todoKey = action.todo.id;
-      if (Object.keys(newState1).includes(todoKey)) {
-        delete newState1.todoKey;
-      }
-      return newState1;
+      nextState = merge({}, state);
+      delete nextState[action.todo.id];
+      return nextState;
     default:
       return state;
   }

@@ -5,7 +5,7 @@ class TodoListItem extends React.Component {
   constructor(props) {
     super(props);
     this.toggleDone = this.toggleDone.bind(this);
-
+    this.removeTodo = this.removeTodo.bind(this);
   }
 
   toggleDone(e) {
@@ -15,14 +15,19 @@ class TodoListItem extends React.Component {
     this.props.receiveTodo(toggledTodo);
   }
 
+  removeTodo(e) {
+    e.preventDefault();
+    this.props.removeTodo(this.props.todo);
+  }
+
   render () {
-    const { todo } = this.props;
+    const { todo, removeTodo } = this.props;
     const { title, done } = todo;
     return (
       <li>
         {title}
         <button onClick={this.toggleDone}>{ done ? "Mark Undone" : "Done"}</button>
-        <button onClick={this.props.removeTodo}>Delete</button>
+        <button onClick={this.removeTodo}>Delete</button>
       </li>
     );
   }
