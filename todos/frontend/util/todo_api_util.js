@@ -13,3 +13,12 @@ export const addTodo = (todo) => (
     dataType: 'JSON'
   })
 );
+
+export const changeTodo = (todo) => (
+  $.ajax ({
+    url: `/api/todos/{todo.id}`,
+    method: 'PATCH',
+    data: {todo},
+    dataType: 'JSON'
+  })
+);

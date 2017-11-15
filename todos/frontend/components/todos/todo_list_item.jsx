@@ -11,8 +11,8 @@ class TodoListItem extends React.Component {
   toggleDone(e) {
     e.preventDefault();
     const toggledTodo = merge({}, this.props.todo, { done: !this.props.todo.done });
-
-    this.props.receiveTodo(toggledTodo);
+    console.log(this.props);
+    this.props.updateTodo(toggledTodo);
   }
 
   removeTodo(e) {
