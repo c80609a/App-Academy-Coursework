@@ -1,5 +1,8 @@
 module Stepable
 # constants and methods
+  KNIGHTDIFFS = [[2, 1],[2, -1],[-2, 1],[-2, -1],[1, 2],[1, -2],[-1, 2],[-1, -2]]
+  DIAGONALS = [[1,1],[1,-1],[-1,1],[-1,-1]]
+  STRAIGHTS = [[0,1],[0,-1],[1,0],[-1,0]]
   def moves()
   end
 
@@ -10,6 +13,9 @@ module Stepable
 end
 
 module Slideable
+  DIAGONALS = [[1,1],[1,-1],[-1,1],[-1,-1]]
+  STRAIGHTS = [[0,1],[0,-1],[1,0],[-1,0]]
+
   def moves()
   end
 
