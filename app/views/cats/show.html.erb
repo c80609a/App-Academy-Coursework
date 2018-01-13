@@ -1,0 +1,31 @@
+<h1><%=@cat.name%>'s Information</h1>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Color</th>
+    <th>Sex</th>
+    <th>Birthday</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><%=@cat.name%></td>
+    <td><%=@cat.color%></td>
+    <td><%=@cat.sex%></td>
+    <td><%=@cat.birthdate%></td>
+    <td><%=@cat.description%></td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <th>Rental Status</th>
+    <th>Start date</th>
+    <th>End Date</th>
+  </tr>
+  <% @rentals.each do |rental| %>
+  <tr><td><%= rental.status %></td><td><%= rental.start_date %></td><td><%= rental.end_date %></td></tr>
+  <% end %>
+</table>
