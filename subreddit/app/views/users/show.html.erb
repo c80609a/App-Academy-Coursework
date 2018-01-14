@@ -1,0 +1,5 @@
+<h3>User Page</h3>
+
+<p>You are logged in as: <%= @user.username %> </p>
+
+<%= button_to "Log Out", session_url, method: :delete %>

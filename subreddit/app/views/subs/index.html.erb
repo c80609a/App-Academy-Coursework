@@ -1,0 +1,8 @@
+<h3>SubReddit Index Page</h3>
+<ul>
+  <% @subs.each do |sub| %>
+    <li><%= link_to sub.title, sub_url(sub) %> </li>
+  <% end %>
+</ul>
+<br>
+<%= button_to 'Add a new Sub!', new_sub_url, method: :get %>
