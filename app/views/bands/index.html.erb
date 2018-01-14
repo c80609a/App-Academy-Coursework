@@ -1,0 +1,8 @@
+<h3>Bands Index Page!</h3>
+<ul>
+  <% @bands.each do |band| %>
+  <li><a href="<%= band_url(band) %>"><p><%= band.name %></p></a></li>
+  <% end %>
+</ul>
+<br>
+<%= button_to "Add a band!", new_band_url, method: :get %>
