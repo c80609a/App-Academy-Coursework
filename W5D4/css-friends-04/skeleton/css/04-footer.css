@@ -1,0 +1,34 @@
+/* PHASE 4: Footer */
+
+.group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.footer-container {
+  width: 900px;
+  border: 1px solid #ccc;
+  border-top: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  background: white;
+  color: #ccc;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.footer-left {
+  padding: 10px;
+}
+
+.footer-right {
+  display: flex;
+  padding: 10px;
+
+}
+
+.footer-right li{
+  padding: 10px;
+}
