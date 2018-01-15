@@ -1,0 +1,46 @@
+class DynamicProgramming
+  def initialize
+    @frog_cache = []
+  end
+
+  def frog_cache_builder(n)
+    ways_collection = [[[]], [[1]], [[1, 1], [2]]]
+
+    return ways_collection if n < 3
+
+    (3..n).each do |i|
+      new_way_set = []
+      (1..3).each do |first_step|
+        ways_collection[i - first_step].each do |way|
+          new_way = [first_step]
+          way.each do |step|
+            new_way << step
+          end
+          new_way_set << new_way
+        end
+      end
+      ways_collection
+    end
+  end
+
+  def frog_hops_top_down(n)
+    @frog_cache = [[[]], [[1]], [[1,1], [2]]]
+    frog_hops_top_down_helper(n)
+  end
+
+  def frog_hops_top_down_helper(n)
+    return @frog_cache[n] if frog_cache[n]
+    new_way_set = []
+    (1..3).each do |first_step|
+      frog_hops_top_down_helper(n - first_step).each do |way|
+        new_way = [first_step]
+        way.each do |step|
+          new_way << step
+        end
+        new_way_set << new_way
+      end
+    end
+    @frog_cache[n] = new_way_set
+  end
+
+end
