@@ -103,5 +103,6 @@ end
 # Assume the arguments are integers.
 # HINT: Use dec_remainder_of_two_integers as a helper method
 def int_remainder_without_modulo(i_dividend, i_divisor)
+  return i_dividend if i_dividend < i_divisor
   ((i_dividend.to_f / i_divisor) - dec_remainder_of_two_integers(i_dividend, i_divisor)).to_i
 end
