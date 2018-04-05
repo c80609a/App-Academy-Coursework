@@ -1,9 +1,16 @@
-IDS = {
+EDITED_IDS = {
   "CallOfDutyWW2" => ["Call of duty world war two", "COD WW2", "COD WWII", "WW2COD"],
   "Fortnite" => ["Fortnite", "Fort Nite"],
   "Destiny" => ["Destiny", "original Destiny game"],
-  "Destiny2" => ["Destiny 2", "the last Destiny game", "Destiny II"],
+  "Destiny2" => ["Destiny 2", "last Destiny game", "Destiny II"],
   "WorldOfWarcraft" => ["WoW the game", "world of warcraft"]
+}
+## each value really needs to be unique as well, otherwise there
+## can be no distinction made for the tags
+inverted = {}
+EDITED_IDS.each {|k, v|
+  # v is an array of strings
+  v.each { |str| inverted[str] = k }
 }
 
 DOC = [
