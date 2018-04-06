@@ -4,6 +4,11 @@
 # factors of a given number.
 
 def factors(num)
+  result = []
+  (1..num).each do |int|
+    result << int if num % int == 0
+  end
+  result
 end
 
 # ### Bubble Sort
@@ -46,11 +51,28 @@ end
 # http://stackoverflow.com/questions/827649/what-is-the-ruby-spaceship-operator
 
 class Array
-  def bubble_sort!
+  def bubble_sort!(&prc)
+    prc ||= Proc.new { |el1, el2| el1 <=> el2 }
+    sorted = false
+    while !sorted
+      sorted = true
+      length.times do |i|
+        (i+1...length).each do |j|
+          if prc.call(self[i], self[j]) == 1
+            self[i], self[j] = self[j], self[i]
+            sorted = false
+          end
+        end
+      end
+    end
+    self
   end
 
   def bubble_sort(&prc)
+    self.dup.bubble_sort!
   end
+
+
 end
 
 # ### Substrings and Subwords
@@ -67,9 +89,17 @@ end
 # words).
 
 def substrings(string)
+  result = []
+  (0...string.length).each do |i|
+    (0...string.length).each do |j|
+      result << string[i..j]
+    end
+  end
+  result.uniq
 end
 
 def subwords(word, dictionary)
+  substrings(word).select {|word| dictionary.include?(word) }
 end
 
 # ### Doubler
@@ -77,6 +107,7 @@ end
 # array with the original elements multiplied by two.
 
 def doubler(array)
+  array.map {|el| el * 2}
 end
 
 # ### My Each
@@ -104,6 +135,10 @@ end
 
 class Array
   def my_each(&prc)
+    self.length.times do |i|
+      prc.call(self[i])
+    end
+    self
   end
 end
 
@@ -122,12 +157,23 @@ end
 
 class Array
   def my_map(&prc)
+    result = []
+    self.my_each {|el| result << prc.call(el)}
+    result
   end
 
   def my_select(&prc)
+    result = []
+    self.my_each {|el| result << el if prc.call(el) }
+    result
   end
 
   def my_inject(&blk)
+    acc = self.first
+    (1...self.length).each do |i|
+      acc = blk.call(acc, self[i])
+    end
+    acc
   end
 end
 
@@ -141,4 +187,5 @@ end
 # ```
 
 def concatenate(strings)
+  strings.inject { |acc, el| acc += el}
 end

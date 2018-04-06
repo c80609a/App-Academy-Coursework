@@ -45,3 +45,9 @@
 # eval_block(1, 2, 3)
 # # => "NO BLOCK GIVEN"
 # ```
+
+def eval_block(*args, &prc)
+  raise "no block given" if prc.nil?
+  # array = toA
+  prc.call(*args)
+end
