@@ -95,6 +95,14 @@ end
 # "cat", "cat"]) => 1 biodiversity_index(["cat", "leopard-spotted ferret",
 # "dog"]) => 9
 def biodiversity_index(specimens)
+  spec_hash = Hash.new(0)
+  specimens.each { |critter| spec_hash[critter] += 1 }
+  number_of_species = spec_hash.size
+  smallest_population_size = spec_hash.values.min
+  largest_population_size = spec_hash.values.max
+  number_of_species ** 2 * smallest_population_size /  largest_population_size
+
+
 end
 
 # Define a method that, given the string of a respectable business sign, returns
@@ -103,7 +111,14 @@ end
 # can_tweak_sign("We're having a yellow ferret sale for a good cause over at the
 # pet shop!", "Leopard ferrets forever yo") => true
 def can_tweak_sign?(normal_sign, vandalized_sign)
+  normal_hash = character_count(normal_sign)
+  vand_hash = character_count(vandalized_sign)
+  vand_hash.all? { |k,v| normal_hash[k] >= v }
 end
 
 def character_count(str)
+  hash = Hash.new(0)
+  alpha = ("a".."z").to_a
+  str.each_char {|ch| hash[ch] += 1 if alpha.include?(ch) }
+  hash
 end
