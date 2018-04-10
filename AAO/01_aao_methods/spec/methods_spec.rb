@@ -138,6 +138,14 @@ describe "methods.rb" do
       expect(int_remainder_without_modulo(5, 6)).to eq(5)
     end
 
+    it "knows 2 mod 6 is 5" do
+      expect(int_remainder_without_modulo(2, 6)).to eq(2)
+    end
+
+    it "knows 22 mod 3 is 1" do
+      expect(int_remainder_without_modulo(22, 3)).to eq(1)
+    end
+
     it "doesn't use the % operator" do
       a = double('Integer').as_null_object
       expect(a).not_to receive(:%)

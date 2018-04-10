@@ -4,6 +4,7 @@ class Array
     i = 0
     while i < length
       result << self[i] if blk.call(self[i])
+      i += 1
     end
     result
   end
@@ -12,8 +13,9 @@ end
 class Array
   def my_map(&blk)
     result = []
+    i = 0
     while i < length
-      result << self[i]
+      result << blk.call(self[i])
       i += 1
     end
     result
@@ -26,7 +28,7 @@ class Array
     i = 0
 
     while i < length
-      blk.call(self[i])
+      return self[i] if blk.call(self[i])
       i += 1
     end
 
@@ -38,17 +40,17 @@ end
 class Array
   def my_any?(&prc)
     self.each do |el|
-      return false if prc.call(el)
+      return true if prc.call(el)
     end
 
-    true
+    false
   end
 end
 
 
 class Array
   def my_all?(&blk)
-    self.each { return false unless blk(el) }
+    self.each { |el| return false unless blk.call(el) }
     true
   end
 end
@@ -58,7 +60,7 @@ class Array
   # Write an array method that returns `true` if the array has duplicated
   # values and `false` if it does not
   def dups?
-    elements = Hash.new(true)
+    elements = Hash.new(false)
     self.each do |item|
       return true if elements[item]
       elements[item] = true
@@ -79,12 +81,17 @@ class Hash
   # should optionally take a proc as an argument and return a new hash. If a proc
   # is not given, your method should provide default merging behavior. Do not use
   # Hash#merge in your method.
-  def my_merge(hash2)
-    new_hash = []
+  def my_merge(hash2, &prc)
+    prc ||= Proc.new { |key, val1, val2| val2 }
 
-    hash2.each do |k2, v2|
-      new_hash[k2] = v2
+
+    hash2.each do |k, v|
+      if self[k]
+        self[k] = prc.call(k, self[k], v)
+      else
+        self[k] = v
+      end
     end
-    new_hash
+    self
   end
 end

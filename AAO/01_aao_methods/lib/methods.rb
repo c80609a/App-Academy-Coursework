@@ -77,32 +77,52 @@ def last_n_digits(num, n)
 end
 
 
-#HARD
+# #HARD
+#
+# # Write a method that returns the decimal remainder of dividing two floats.
+# # The decimal remainder is the right side of the decimal point
+# # (the "fractional part") of the quotient.
+# # (dec_remainder_of_two_floats(8.0, 5.0) => 0.6 because 8.0 / 5.0 => 1.6)
+# def dec_remainder_of_two_floats(f_dividend, f_divisor)
+#   (f_dividend / f_divisor) - (f_dividend / f_divisor).floor
+# end
+# #
+# # # Write a method that returns the decimal remainder of dividing two integers.
+# # # HINT: Use dec_remainder_of_two_floats as a helper method,
+# # # but don't forget to pass the proper type of argument
+# def dec_remainder_of_two_integers(i_dividend, i_divisor)
+#   dec_remainder_of_two_floats(i_dividend.to_f, i_divisor)
+# end
+# #
+# #
+# # # EXPERT
+# #
+# # # Write a method that returns the integer remainder of its two arguments.
+# # # (i.e., what using the modulo operator would return).
+# # # You may not use the modulo operator.
+# # # Assume the arguments are integers.
+# # # HINT: Use dec_remainder_of_two_integers as a helper method
+# def int_remainder_without_modulo(i_dividend, i_divisor)
+#   return i_dividend if i_dividend < i_divisor
+#   ((i_dividend.to_f / i_divisor) - dec_remainder_of_two_integers(i_dividend, i_divisor)).to_i
+# end
+#####
 
-# Write a method that returns the decimal remainder of dividing two floats.
-# The decimal remainder is the right side of the decimal point
-# (the "fractional part") of the quotient.
-# (dec_remainder_of_two_floats(8.0, 5.0) => 0.6 because 8.0 / 5.0 => 1.6)
+
+
 def dec_remainder_of_two_floats(f_dividend, f_divisor)
-  (f_dividend / f_divisor) - (f_dividend / f_divisor).floor
+  result = f_dividend / f_divisor
+  decimals = result - result.floor
+  return decimals
 end
 
-# Write a method that returns the decimal remainder of dividing two integers.
-# HINT: Use dec_remainder_of_two_floats as a helper method,
-# but don't forget to pass the proper type of argument
 def dec_remainder_of_two_integers(i_dividend, i_divisor)
-  dec_remainder_of_two_floats(i_dividend.to_f, i_divisor)
+  return dec_remainder_of_two_floats(i_dividend.to_f, i_divisor.to_f)
 end
 
-
-# EXPERT
-
-# Write a method that returns the integer remainder of its two arguments.
-# (i.e., what using the modulo operator would return).
-# You may not use the modulo operator.
-# Assume the arguments are integers.
-# HINT: Use dec_remainder_of_two_integers as a helper method
 def int_remainder_without_modulo(i_dividend, i_divisor)
-  return i_dividend if i_dividend < i_divisor
-  ((i_dividend.to_f / i_divisor) - dec_remainder_of_two_integers(i_dividend, i_divisor)).to_i
+  puts "dividend: #{i_dividend} / divisor: #{i_divisor}"
+  decimal_remainder = dec_remainder_of_two_integers(i_dividend, i_divisor)
+  puts "dec_remainder: #{decimal_remainder}"
+  return (i_divisor * decimal_remainder).round
 end
