@@ -114,6 +114,25 @@ end
 
 class Fixnum
   def stringify(base)
+    base_values = {
+      10 => "A",
+      11 => "B",
+      12 => "C",
+      13 => "D",
+      14 => "E",
+      15 => "F"
+    }
+    (0..9).each do |i|
+      base_values[i] = i.to_s
+    end
+    result = []
+    i = 0
+    while base ** i < self
+      result << (self / (base ** i)) % base
+      i += 1
+    end
+
+    p result.join
   end
 end
 

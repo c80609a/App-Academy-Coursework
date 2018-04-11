@@ -107,22 +107,3 @@ end
 #   ((i_dividend.to_f / i_divisor) - dec_remainder_of_two_integers(i_dividend, i_divisor)).to_i
 # end
 #####
-
-
-
-def dec_remainder_of_two_floats(f_dividend, f_divisor)
-  result = f_dividend / f_divisor
-  decimals = result - result.floor
-  return decimals
-end
-
-def dec_remainder_of_two_integers(i_dividend, i_divisor)
-  return dec_remainder_of_two_floats(i_dividend.to_f, i_divisor.to_f)
-end
-
-def int_remainder_without_modulo(i_dividend, i_divisor)
-  puts "dividend: #{i_dividend} / divisor: #{i_divisor}"
-  decimal_remainder = dec_remainder_of_two_integers(i_dividend, i_divisor)
-  puts "dec_remainder: #{decimal_remainder}"
-  return (i_divisor * decimal_remainder).round
-end
