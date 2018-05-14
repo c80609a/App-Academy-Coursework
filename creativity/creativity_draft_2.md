@@ -1,3 +1,4 @@
+### Boden's Conceptual Foundation
 1. What is Creativity
   * New - if you had the solution, you'd already have been there
     - P-Novelty
@@ -63,5 +64,28 @@
       - movement naturally catches our attention
       - relevance recognition has been found to be built into our sensory systems
 ---
-
-7. 
+### Gabora's Connectionist Model
+1. Intro
+  * Levels of Function
+    - tech like EEG, MRI and PET help us understand which areas of the brain are active
+    - still no answer as to how creative solutions, too high level
+    - however, representational capacity of neurons emergences across patterns, not single neurons, a single neuron too low
+    - focus then on the neural mechanisms underlying the representation of concepts and ideas, looking at the level of 'distributed aggregates' of neurons
+    - trouble is, we don't have fine enough tech yet to really see what's going on in real time
+    - computational models help shine light on this
+  * Microfeatures
+    - memories encoded as neurons sensitive to ranges (values) of microfeatures
+    - orientation of a line, feeling of honesty, perhaps without even a direct word to match to it
+    - each neuron reacts maximally to one specific microfeature, and to lesser degrees to other microfeatures
+  * 'coarse coding'
+    - a memory is distributed across a cell-assembly that contains many neurons
+    - likewise, each neuron then participates in the encoding of many items
+    - neurons and used and reused over and over in neural reentrance
+  * Content Addressable
+    - systematic relationship between the content of a representation and where it gets encoded
+    - (as opposed to random access memory, assigned by avail space)
+    - emerges naturally through the mechanism of coarse coding, the physical proximity of similar neurons necessary in order to capture the best fit pattern
+  * Relational Encoding
+    - even if there isn't an exact match microfeature neuron, the fact that it is an assembly captures the essence of the microfeature by virtue of all the best-fit neurons lit up by their varying degrees
+    - this system means that relationships between things are implicitly encoded, and that much more information is available that way
+    - for example, if I ask you whether or not a white goat is a mammal, the answer is yes, although no one ever probably sat you down and taught you specifically that a white goat, or even a goat for that matter, is a mammal, something allows you to make that traversal easily
