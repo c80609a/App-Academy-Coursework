@@ -31,15 +31,37 @@
     - the really surprising aha! creativity, something that seemed impossible
     - some defining dimension of the conceptual space has been altered, changed
     - with this fundamental change made, it paves the way for exploratory creativity to take over
-  * EX - Chess Game
-    - game itself is a conceptual space
-    - concepts. real and theoretical include pieces, colored squares, 2D placements, rules to dictate movements, etc
-    - games are played exploring this structure, different moves made, perhaps a new strategy here and there, but all within the same set of rules
-    - now imagine altering the rules about pawns so that they can jump over other pieces in some way
-    - suddenly, the set of available moves, countermoves and strategies expands, the way the game is played has been transformed
-    - now players can spend time combining new moves and exploring the jumping-pawn-chess conceptual space
+
+4. EX - Chess Game
+  * game itself is a conceptual space
+  * concepts. real and theoretical include pieces, colored squares, 2D placements, rules to dictate movements, etc
+  * games are played exploring this structure, different moves made, perhaps a new strategy here and there, but all within the same set of rules
+  * now imagine altering the rules about pawns so that they can jump over other pieces in some way
+  * suddenly, the set of available moves, countermoves and strategies expands, the way the game is played has been transformed
+  * now players can spend time combining new moves and exploring the jumping-pawn-chess conceptual space
+
+5. Complications
   * transformational tends to be everyone's favorite *TODO*
     - fun part tends to generally be when that type of transformative breakthrough happens in our understanding of science, bringing us hopefully one step closer to a more exact working understanding
     - also tend to be the ones that meet with initial resistance, and the further from the status quo, the more likely to meet difficulty
     - "creative" being a subjective definition, and culture and society being what it is, breakthroughs can often be dismissed for any number of reasons from personal to national to religious
-    -
+    - the subject of 'valuation'
+  * Insight vs. Process
+    - what we tend to value as a single artifact or product is really the end result of a longer process of creative insight and evaluation
+    - can ask then what aspect of an idea is creative, and in which way
+
+6. Neuroscience
+  * Associative Memory
+    - historical example is John Livingstone Lowes sorting through all of Coleridge's material to find the references used in Kubla Khan and The Rime of the Ancient Mariner
+    - since the 80s we have known there are drugs that increase or decrease the range of associative thinking
+    - neural networks are now helping us test and model theories at a much faster rate
+  * Relevance
+    - conceptually, any concept could be associated with any other
+    - must be some way of quickly assessing value, speech, for example, needs to be understood immediately and correctly
+    - concept of relevance, a mechanism to select more meaningful combinations
+    - evolved psychological mechanisms that determine this
+      - movement naturally catches our attention
+      - relevance recognition has been found to be built into our sensory systems
+---
+
+7. 
