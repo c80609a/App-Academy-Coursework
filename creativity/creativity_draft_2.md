@@ -72,7 +72,7 @@
     - however, representational capacity of neurons emergences across patterns, not single neurons, a single neuron too low
     - focus then on the neural mechanisms underlying the representation of concepts and ideas, looking at the level of 'distributed aggregates' of neurons
     - trouble is, we don't have fine enough tech yet to really see what's going on in real time
-    - computational models help shine light on this
+    - connectionist models help shine light on this
   * Microfeatures
     - memories encoded as neurons sensitive to ranges (values) of microfeatures
     - orientation of a line, feeling of honesty, perhaps without even a direct word to match to it
@@ -89,3 +89,9 @@
     - even if there isn't an exact match microfeature neuron, the fact that it is an assembly captures the essence of the microfeature by virtue of all the best-fit neurons lit up by their varying degrees
     - this system means that relationships between things are implicitly encoded, and that much more information is available that way
     - for example, if I ask you whether or not a white goat is a mammal, the answer is yes, although no one ever probably sat you down and taught you specifically that a white goat, or even a goat for that matter, is a mammal, something allows you to make that traversal easily
+  * Reconstructive Interference
+    - such networks allow for the abstraction of a prototype for pattern recognition filling in missing features
+    - similar representations can interfere in what is called crosstalk or ghost memories
+    - memories are not retrieved so much as reconstructed by activating the cell assembly again, colored subtly by anything in between and by the spontaneous activation to whatever has called it
+  * Spontaneous Match vs. Search and Sift
+    - because all the connections are there, w
