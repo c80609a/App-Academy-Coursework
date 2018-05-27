@@ -1,9 +1,9 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
-  entry: "./frontend/my_app.jsx",
+  entry: "./frontend/widgets.jsx",
   output: {
-      path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+      path: path.resolve(__dirname),
       filename: "bundle.js"
   },
   module: {
@@ -21,6 +21,7 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
+  // resolve allows for the non-specification of extensions in file reqs
   resolve: {
     extensions: ['.js', '.jsx', '*']
   },
