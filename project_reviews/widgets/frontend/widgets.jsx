@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import Filename from 'file';
+import Clock from './clock';
 
 document.addEventListener('DOMContentLoaded', function () {
-  ReactDOM.render(<div>"Hi from Entry Point"</div>, document.getElementById('main'));
+  ReactDOM.render(<Clock />, document.getElementById('main'));
 });
