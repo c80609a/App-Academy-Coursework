@@ -20,5 +20,5 @@ function Root() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  ReactDOM.render(<Clock />, document.getElementById("main"));
+  ReactDOM.render(<Root />, document.getElementById("main"));
 });
