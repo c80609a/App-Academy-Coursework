@@ -100,7 +100,7 @@ input[type="submit"] {
 
 .tab-header {
   display: flex;
-
+  cursor: pointer;
 }
 
 .tab {
