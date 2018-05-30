@@ -52,9 +52,11 @@ class Tabs extends React.Component {
                         panes={this.props.panes} />
 
                 </div>
-                <article className="pane-content">
-                    {pane.content}
-                </article>
+                <div className="pane-container">
+                    <article className="pane-content">
+                        {pane.content}
+                    </article>
+                </div>
             </div>
                     
         );

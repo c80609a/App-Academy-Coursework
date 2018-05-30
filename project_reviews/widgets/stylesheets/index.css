@@ -103,27 +103,45 @@ input[type="submit"] {
 
 }
 
-.pane-content {
-  border: 1px solid rgb(104, 104, 104);
-  min-height: 200px;
-  padding: 5px;
-}
-
 .tab {
-  border-top: 1px solid rgb(104, 104, 104);
-  border-left: 1px solid rgb(104, 104, 104);
-  
-  padding: 2px;
+  border-top: 2px solid rgb(104, 104, 104);
+  border-left: 2px solid rgb(104, 104, 104);
+
+  padding: 3px;
   min-width: 42px;
   text-align: center;
 }
 
+.tab-header :first-child {
+  border-top-left-radius: 6px;
+}
+
 .tab-header :last-child {
-  border-right: 1px solid rgb(104, 104, 104);
+  border-right: 2px solid rgb(104, 104, 104);
+  border-top-right-radius: 6px;
+
 }
 
 .active {
   font-weight: bold;
+  background-color: lightcyan;
 
 }
+
+.pane-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+ 
+  border: 2px solid rgb(104, 104, 104);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+  min-height: 200px;
+  padding: 5px;
+}
+
+.pane-content {}
+
 
