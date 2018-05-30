@@ -5,9 +5,9 @@ class Headers extends React.Component {
         let selectedTab = this.props.selectedTab;
         let tabs = this.props.panes.map((pane, index) => {
             let title = pane.title;
-            let klass = '';
+            let klass = 'tab';
             if (index == selectedTab) {
-                klass = 'active';
+                klass = 'tab active';
             }
             return (
                 <li key={index}
@@ -44,7 +44,7 @@ class Tabs extends React.Component {
         let pane = this.props.panes[this.state.selectedTab];
 
         return (
-            <div>
+            <div className="tab-widget">
                 <div className="tabs-container">
                     <Headers
                         selectedTab={this.state.selectedTab}

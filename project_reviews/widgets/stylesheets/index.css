@@ -88,10 +88,42 @@ input[type="submit"] {
     padding: 4px;
 }
 
-.time-container {
-    
+/* tabs css code */
+
+.tab-widget {
+  /* display: flex; */
+  width: 400px;
+  margin: 20px;
+
 }
 
-.date-container {
-    
+
+.tab-header {
+  display: flex;
+
 }
+
+.pane-content {
+  border: 1px solid rgb(104, 104, 104);
+  min-height: 200px;
+  padding: 5px;
+}
+
+.tab {
+  border-top: 1px solid rgb(104, 104, 104);
+  border-left: 1px solid rgb(104, 104, 104);
+  
+  padding: 2px;
+  min-width: 42px;
+  text-align: center;
+}
+
+.tab-header :last-child {
+  border-right: 1px solid rgb(104, 104, 104);
+}
+
+.active {
+  font-weight: bold;
+
+}
+
